@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package name="com"  extends="struts-default">
+        <action name="login" class="com.hxx.action.LoginAction" >
+            <result name="success">homepage.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+        <action name="register" class="com.hxx.action.RegisterAction">
+            <result name="success">login.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+    </package>
+ <package name="ajax" extends="json-default">
+
+        <action name="genvcode" class="com.hxx.action.GenVCodeAction" method="execute">
+            <result type="json"></result>
+        </action>
+
+        <action name="genTransVCode" class="com.hxx.action.GenVCodeAction" method="genVCode">
+            <result type="json"></result>
+        </action>
+        <action name="transfer" class="com.hxx.action.TransferAction">
+            <result type="json"></result>
+        </action>
+    </package>
+</struts>
+
